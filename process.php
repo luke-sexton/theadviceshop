@@ -1,46 +1,40 @@
 <?php include("dbconnect.php"); ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>The Advice Shop - Subscribed</title>
-<link href="styles/mainstyles.css" rel="stylesheet" type="text/css" media="screen">
+    <meta charset="UTF-8">
+    <title>The Advice Shop - Subscribed</title>
+    <link href="styles/mainstyles.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body>
 <?php include("inc_header.php");
 include("inc_nav.php"); ?>
-<?php  
-if (isset($_REQUEST['name'])) {
-    echo "<h2>Thank you ". $_REQUEST['name']."</h2>";
-}
-else {
-    echo "<h2>Please subscribe</h2>";
-}
-?>
-
 <div id="content">
+    <?php
+    include("functions/checkUsername.php");
+    include("functions/storeUserDetails.php");
+    include("functions/displayLoginPrompt.php");
+    // User details
+    $username = $_POST['username'];
+    $userFirstName = $_POST['first_name'];
+    $userLastName = $_POST['last_name'];
 
-<p>...<form action="process.php" method="get">
-  <p>
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" required>
-  </p>
-  <p>Gender:<br>
-    <label>
-      <input type="radio" name="gender" value="male" id="gender_0">
-      Male</label>
-    <br>
-    <label>
-      <input type="radio" name="gender" value="female" id="gender_1">
-      Female</label>
-    <br>
-  </p>
-  <p>
-    <input type="submit" name="submit" id="submit" value="Subscribe">
-  </p>
-</form>
-</p>
+    // Check if username is valid
+    $usernameInUse = checkUsername($username, $adviceDatabase);
+
+    if ($usernameInUse) {
+        // Display prompt to login.
+        $case = 0;
+        displayLoginPrompt($case, $userFirstName);
+
+    } else {
+        // Store user's details in database, display prompt.
+        $case = 1;
+        storeUserDetails($username, $userFirstName, $userLastName, $adviceDatabase);
+        displayLoginPrompt($case, $userFirstName);
+    }
+    ?>
 </div>
 <?php include("inc_footer.php"); ?>
 </body>
