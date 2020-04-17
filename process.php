@@ -14,7 +14,7 @@ include("inc_nav.php"); ?>
     <?php
     include("functions/checkUsername.php");
     include("functions/storeUserDetails.php");
-    include("functions/displayLoginPrompt.php");
+    include("functions/displayMessages.php");
     // User details
     $username = $_POST['username'];
     $userFirstName = $_POST['first_name'];
@@ -26,13 +26,13 @@ include("inc_nav.php"); ?>
     if ($usernameInUse) {
         // Display prompt to login.
         $case = 0;
-        displayLoginPrompt($case, $userFirstName);
+        displayMessages($case, $userFirstName);
 
     } else {
         // Store user's details in database, display prompt.
         $case = 1;
         storeUserDetails($username, $userFirstName, $userLastName, $adviceDatabase);
-        displayLoginPrompt($case, $userFirstName);
+        displayMessages($case, $userFirstName);
     }
     ?>
 </div>

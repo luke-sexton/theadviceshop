@@ -1,12 +1,13 @@
 Practical 7 - PHP Programming
 
-Changes made to Advice Shop website:
+Examples of PHP programming made to the Advice Shop website:
 
 # 1 - Echo          advisors.php
                     process.php
-# 2 - Conditionals
-# 3 - Looping       advisors.php (Line 24)
+# 2 - Conditionals  If statement:       process.php
+                    Switch statement:   functions/displayMessages.php
+# 3 - Looping       advisors.php
 # 4 - Function      functions/checkUsername.php
                     functions/storeUserDetails.php
-                    process.php (helper method line 41)
-# 5 - Include       login_updated.php
+                    functions/displayMessages.php
+# 5 - Include       create new page to display login messages.

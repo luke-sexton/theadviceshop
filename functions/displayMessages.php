@@ -1,5 +1,5 @@
 <?php
-function displayLoginPrompt(int $value, String $userFirstName)
+function displayMessages(int $value, String $userFirstName)
 {
     switch ($value) {
         case 0:
