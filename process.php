@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The Advice Shop - Subscribed</title>
-    <link href="styles/mainstyles.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body>

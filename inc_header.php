@@ -1,7 +1,7 @@
 <?php
 $filename = substr(strrchr($_SERVER['SCRIPT_NAME'], "/"), 1); // missing '' around index - notice error
 $name = substr($filename, 0, strrpos($filename, ".")); ?>
-<header id="pageHeader">
+<header class="primary-border" id="pageHeader">
     <aside id="login">
         <form action="login.php?page=<?php echo $name; ?>" method="post"><label for="username"></label><input
                     name="username" id="username"

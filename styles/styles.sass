@@ -1,0 +1,85 @@
+@use "colors"
+@use "fonts"
+@use "mixins"
+
+$global-spacing: 16px
+$body-margin-horizontal: 512px
+$body-margin-vertical: 64px
+
+
+// Classes
+.primary-border
+  @include mixins.border(colors.$highlight, solid, 8px)
+
+.secondary-border
+  @extend .primary-border
+  padding: 16px
+
+.secondary-border-yellow
+  @extend .secondary-border
+  @include mixins.border-color(colors.$yellow)
+
+.secondary-border-blue
+  @extend .secondary-border
+  border-color: colors.$blue
+  transform: rotate(0.5deg)
+
+.call-to-action
+  @include mixins.offset-horizontal
+  a
+    color: colors.$dark-red
+
+.text-align-right
+  text-align: right
+.text-align-left
+  text-align: left
+.text-align-center
+  text-align: center
+.flip
+  transform: rotate(-180deg)
+.reverse
+  direction: rtl
+  unicode-bidi: bidi-override
+.rotate-right
+  transform: rotate(45deg)
+
+
+header
+  background-color: colors.$secondary
+  text-align: center
+  h1
+    padding: 16px
+    text-align: justify
+    transform: rotate(-3deg)
+  form
+    text-align: left
+
+
+body
+  background-color: colors.$primary
+  margin: $body-margin-vertical $body-margin-horizontal
+  p
+    font-family: fonts.$paragraph-font
+    background-color: colors.$highlight
+  h2
+    text-align: left
+  h3
+    text-align: right
+    transform: rotate(2.5deg)
+
+footer
+  background-color: colors.$highlight
+
+h1 h2 h3 h4 h5
+  font-family: fonts.$main-font
+  color: colors.$primary
+
+p
+  font-family: fonts.$paragraph-font
+
+ul
+  font-family: fonts.$list-font
+  li
+    margin: $global-spacing
+
+

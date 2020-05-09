@@ -1,0 +1,16 @@
+$offset-negative: -62px
+$offset-positive: 62px
+
+
+@mixin offset-horizontal
+  margin-right: $offset-positive
+  margin-left: $offset-negative
+
+@mixin border($color, $style, $width)
+  border-color: $color
+  border-style: $style
+  border-width: $width
+
+@mixin border-color($color)
+  border-color: $color
+

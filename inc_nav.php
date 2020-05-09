@@ -6,7 +6,7 @@
                         class="glyphicon glyphicon-star"></span> Advisors</a></li>
         <li <?php if ($name == "samples") echo 'class="current"'; ?>><a href="samples.php"><span
                         class="glyphicon glyphicon-comment"></span> Sample Advice</a></li>
-        <li <?php if ($name == "subscribe") echo 'class="current"'; ?>><a href="subscribe.php"><span
+        <li class="call-to-action reverse" <?php if ($name == "subscribe") echo 'class="current"'; ?>><a href="subscribe.php"><span
                         class="glyphicon glyphicon-shopping-cart"></span> Subscribe Now</a></li>
     </ul>
 </nav>
